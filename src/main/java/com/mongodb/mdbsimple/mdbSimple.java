@@ -94,10 +94,8 @@ public class mdbSimple implements Executor {
 
         try {
 
-            Integer currentCount = docCount.incrementAndGet();
-
             Interval intTotal = samples.set("Total");
-            if (currentCount > maxCount) {
+            if (docCount.get() > maxCount) {
                 worker.stop();
 
             } else {
@@ -110,7 +108,11 @@ public class mdbSimple implements Executor {
                 ObjectId docId = ObjectId.get();
                 int docNum = rnd.nextInt(100000);
                 String lower = "abcdefghijklmnopqrstuvwxyz";
-                char str[] = {lower.charAt(rnd.nextInt(26)), lower.charAt(rnd.nextInt(26)), lower.charAt(rnd.nextInt(26)), lower.charAt(rnd.nextInt(26))};
+                // 456,976 possible 4 char strings from 26 chars
+                char str[] = {lower.charAt(rnd.nextInt(26)), 
+                              lower.charAt(rnd.nextInt(26)),
+                              lower.charAt(rnd.nextInt(26)),
+                              lower.charAt(rnd.nextInt(26))};
                 String docStr = new String (str);
 
                 BasicDBObject doc = new BasicDBObject()
