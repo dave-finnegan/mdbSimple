@@ -1,0 +1,106 @@
+{
+    "msdSimple": {
+        "options": [
+            {
+                "op": "c",
+                "longOpt" : "count",
+                "name": "count",
+                "description":"Number of records to insert; default 1",
+                "required": true,
+                "args" : 1
+            },
+            {
+                "op": "db",
+                "longOpt" : "dbname",
+                "name": "dbname",
+                "description":"database name; default 'hcd'",
+                "required": false,
+                "args" : 1
+            },
+            {
+                "op": "v",
+                "longOpt" : "verbose",
+                "name": "verbose",
+                "description": "Enabel verbose output",
+            }
+        ]
+    },
+    "ApplicationFramework" : {
+        "options": [
+            {
+                "op": "h",
+                "longOpt" : "hosts",
+                "name": "hostname:port",
+                "description": "mongodb host, or ',' delimited list of mongos hosts to connect to. Default localhost:27017,",
+                "args": "multi",
+                "separator": ","
+            },
+            {
+                "op": "up",
+                "longOpt" : "usrpwd",
+                "name": "usr:pwd",
+                "description": "username and password; must specify host(s)",
+                "args": 1
+            },
+            {
+                "op": "t",
+                "longOpt" : "threads",
+                "name": "number",
+                "description": "number of worker threads. Default 1",
+                "args": 1
+            },
+            {
+                "op": "wc",
+                "longOpt" : "writeConcern",
+                "name": "concern",
+                "description": "write concern. Default = NORMAL",
+                "args": 1
+            },
+            {
+                "op": "wj",
+                "longOpt" : "journal",
+                "name": "journal",
+                "description": "enable write concern wait for journal commit"
+            },
+            {
+                "op": "ws",
+                "longOpt" : "fsync",
+                "name": "sync",
+                "description": "enable write concern wait for page flush"
+            },
+            {
+                "op": "v",
+                "longOpt" : "verbose",
+                "name": "verbose",
+                "description": "Enabel verbose output",
+                "args": 1
+            },
+            {
+                "op": "pi",
+                "longOpt" : "printInterval",
+                "name": "interval",
+                "description": "print output every n seconds",
+                "args": 1
+            },
+            {
+                "op": "ri",
+                "longOpt" : "reportInterval",
+                "name": "interval",
+                "description": "average stats over an time interval of i milleseconds",
+                "args": 1
+            },
+            {
+                "op": "cr",
+                "longOpt" : "noPretty",
+                "name": "format",
+                "description": "print out in CR-delimited lines. Default is console mode pretty printing, when possible"
+            },
+            {
+            	"op": "b",
+            	"longOpt": "batch",
+            	"args": 1,
+            	"description": "Bulk write in batches of n"
+            }
+        ]
+    }
+}
